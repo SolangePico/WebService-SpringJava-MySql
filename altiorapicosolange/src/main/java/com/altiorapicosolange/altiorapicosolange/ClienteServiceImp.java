@@ -6,10 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ClienteServiceImp implements ClienteService{
+public class ClienteServiceImp implements ClienteService {
 
 	@Autowired
 	private ClienteRepositorio repositorio;
+
 	@Override
 	public List<Cliente> listarClientes() {
 		return repositorio.findAll();
@@ -17,26 +18,25 @@ public class ClienteServiceImp implements ClienteService{
 
 	@Override
 	public Cliente listarIdCliente(int code) {
-		// TODO Auto-generated method stub
-		return null;
+		return repositorio.findById(code);
 	}
 
 	@Override
 	public Cliente crearCliente(Cliente cli) {
-		// TODO Auto-generated method stub
-		return null;
+		return repositorio.save(cli);
 	}
 
 	@Override
 	public Cliente editarCliente(Cliente cli) {
-		// TODO Auto-generated method stub
-		return null;
+		return repositorio.save(cli);
 	}
 
 	@Override
 	public Cliente eliminarCliente(int code) {
-		// TODO Auto-generated method stub
-		return null;
+		Cliente cli = repositorio.findById(code);
+		if (cli != null) {
+			repositorio.delete(cli);
+		}
+		return cli;
 	}
-
 }
