@@ -3,21 +3,21 @@ package com.altiorapicosolange.altiorapicosolange;
 import javax.persistence.*;
 
 @Entity
-@Table(name="client")
+@Table(name = "client")
 public class Cliente {
 
 	@Id
-	@Column(name="CLI_CODE")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)	
+	@Column(name = "CLI_CODE")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int codeCliente;
-	
-	@Column(name="CLI_ID")
+
+	@Column(name = "CLI_ID")
 	private String idCliente;
-	
-	@Column(name="CLI_NAME")
+
+	@Column(name = "CLI_NAME")
 	private String nombreCliente;
-	
-	@Column(name="CLI_LAST_NAME")
+
+	@Column(name = "CLI_LAST_NAME")
 	private String apellidoCliente;
 
 	public int getCodeCliente() {
