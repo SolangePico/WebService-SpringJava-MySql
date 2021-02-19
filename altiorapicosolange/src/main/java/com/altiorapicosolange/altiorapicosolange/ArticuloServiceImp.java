@@ -22,21 +22,21 @@ public class ArticuloServiceImp implements ArticuloService{
 	}
 
 	@Override
-	public Articulo crearArticulo(Articulo cli) {
-		return repositorioA.save(cli);
+	public Articulo crearArticulo(Articulo art) {
+		return repositorioA.save(art);
 	}
 
 	@Override
-	public Articulo editarArticulo(Articulo cli) {
-		return repositorioA.save(cli);
+	public Articulo editarArticulo(Articulo art) {
+		return repositorioA.save(art);
 	}
 
 	@Override
 	public Articulo eliminarArticulo(int code) {
-		Articulo cli = repositorioA.findById(code);
-		if (cli != null) {
-			repositorioA.delete(cli);
+		Articulo art = repositorioA.findById(code);
+		if (art != null) {
+			repositorioA.delete(art);
 		}
-		return cli;
+		return art;
 	}
 }

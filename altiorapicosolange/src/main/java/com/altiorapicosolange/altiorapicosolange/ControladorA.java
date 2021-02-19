@@ -27,7 +27,7 @@ public class ControladorA {
 	}
 
 	@PostMapping
-	public Articulo crearCliente(@RequestBody Articulo art) {
+	public Articulo crearArticulo(@RequestBody Articulo art) {
 		return serviceA.crearArticulo(art);
 	}
 
