@@ -47,4 +47,9 @@ public class Controlador {
 		return service.eliminarCliente(code);
 	}
 	
+	@GetMapping(path= {"/code/{id}"})
+	public Cliente buscarCodigoCliente(@PathVariable("id") String id) {
+		return service.buscarCodigoCliente(id);
+	}
+	
 }

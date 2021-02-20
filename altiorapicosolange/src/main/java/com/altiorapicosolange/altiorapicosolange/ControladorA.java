@@ -46,4 +46,9 @@ public class ControladorA {
 	public Articulo eliminarArticulo(@PathVariable("code") int code) {
 		return serviceA.eliminarArticulo(code);
 	}
+	
+	@GetMapping(path= {"/code/{barCode}"})
+	public Articulo buscarCodigoBarrasArticulo(@PathVariable("barCode") String barCode) {
+		return serviceA.buscarCodigoBarrasArticulo(barCode);
+	}
 }

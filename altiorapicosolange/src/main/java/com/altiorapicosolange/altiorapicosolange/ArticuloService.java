@@ -12,4 +12,6 @@ public interface ArticuloService {
 	Articulo editarArticulo(Articulo art);
 
 	Articulo eliminarArticulo(int code);
+
+	Articulo buscarCodigoBarrasArticulo(String barCode);
 }

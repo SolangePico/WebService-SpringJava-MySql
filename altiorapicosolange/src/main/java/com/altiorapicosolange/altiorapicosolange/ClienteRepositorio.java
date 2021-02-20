@@ -12,4 +12,6 @@ public interface ClienteRepositorio extends Repository<Cliente, Integer> {
 	Cliente save(Cliente cli);
 
 	void delete(Cliente cli);
+	
+	Cliente findByIdCliente(String id);
 }

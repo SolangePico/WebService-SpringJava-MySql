@@ -38,5 +38,10 @@ public class ClienteServiceImp implements ClienteService {
 			repositorio.delete(cli);
 		}
 		return cli;
+	} 
+	
+	@Override
+	public Cliente buscarCodigoCliente(String id) {
+		return repositorio.findByIdCliente(id);
 	}
 }

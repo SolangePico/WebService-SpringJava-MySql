@@ -12,4 +12,6 @@ public interface ClienteService {
 	Cliente editarCliente(Cliente cli);
 
 	Cliente eliminarCliente(int code);
+	
+	Cliente buscarCodigoCliente(String id);
 }

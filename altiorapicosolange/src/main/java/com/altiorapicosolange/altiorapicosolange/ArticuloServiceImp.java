@@ -39,4 +39,9 @@ public class ArticuloServiceImp implements ArticuloService{
 		}
 		return art;
 	}
+	
+	@Override
+	public Articulo buscarCodigoBarrasArticulo(String barCode) {
+		return repositorioA.findByBarCodeArticulo(barCode);
+	}
 }

@@ -13,4 +13,6 @@ public interface ArticuloRepositorio extends Repository<Articulo, Integer> {
 	Articulo save(Articulo art);
 
 	void delete(Articulo art);
+
+	Articulo findByBarCodeArticulo(String barCode);
 }
