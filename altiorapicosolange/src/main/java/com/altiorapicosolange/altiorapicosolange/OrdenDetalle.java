@@ -1,13 +1,18 @@
 package com.altiorapicosolange.altiorapicosolange;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-@Entity
+@Entity(name = "article_order_detail")
 @Table(name = "article_order_detail")
 public class OrdenDetalle {
 
@@ -21,6 +26,12 @@ public class OrdenDetalle {
 
 	@Column(name = "ORD_ART_CODE")
 	private int ord_art_code;
+	
+	@ManyToOne
+	private Orden orden;
+	
+	@ManyToMany
+	private List<Articulo> articulo;
 
 	public int getOrd_id() {
 		return ord_id;

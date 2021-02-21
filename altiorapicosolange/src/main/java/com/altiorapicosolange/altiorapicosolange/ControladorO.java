@@ -24,7 +24,7 @@ public class ControladorO {
 	OrdenDetalleService serviceOD;
 
 	@GetMapping(path = { "/{code}" })
-	public List<Orden> listarOrden(@PathVariable("code") int code) {
+	public List<OrdenByCliente> listarOrden(@PathVariable("code") int code) {
 		return serviceO.listarOrdenesCliente(code);
 	}
 

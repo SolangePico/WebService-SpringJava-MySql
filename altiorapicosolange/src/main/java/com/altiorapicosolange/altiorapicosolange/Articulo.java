@@ -1,8 +1,10 @@
 package com.altiorapicosolange.altiorapicosolange;
 
+import java.util.List;
+
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "article")
 @Table(name = "article")
 public class Articulo {
 
@@ -19,6 +21,10 @@ public class Articulo {
 
 	@Column(name = "AR_UNIT_PRICE")
 	private Double precioUnitarioArticulo;
+	
+	@ManyToMany(mappedBy = "articulo")
+	private List<OrdenDetalle> ordenDetalle;
+	
 
 	public int getCodeArticulo() {
 		return codeArticulo;

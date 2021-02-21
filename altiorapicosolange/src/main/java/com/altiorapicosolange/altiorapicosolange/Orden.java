@@ -1,10 +1,11 @@
 package com.altiorapicosolange.altiorapicosolange;
 
 import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "article_order")
 @Table(name = "article_order")
 public class Orden {
 	
@@ -21,7 +22,13 @@ public class Orden {
 
 	@Column(name = "OR_DATE")
 	private Date fechaOrden;
-
+	
+    @ManyToOne
+	private Cliente cliente;
+	
+	@OneToMany(mappedBy = "orden")
+	private List<OrdenDetalle> ordenDetalle;
+	
 	public int getCodeOrden() {
 		return codeOrden;
 	}

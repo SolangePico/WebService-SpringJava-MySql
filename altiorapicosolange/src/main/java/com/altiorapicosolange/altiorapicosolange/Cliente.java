@@ -1,8 +1,10 @@
 package com.altiorapicosolange.altiorapicosolange;
 
+import java.util.List;
+
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "client")
 @Table(name = "client")
 public class Cliente {
 
@@ -19,6 +21,9 @@ public class Cliente {
 
 	@Column(name = "CLI_LAST_NAME")
 	private String apellidoCliente;
+	
+	@OneToMany(mappedBy = "cliente")
+	private List<Orden> orden;
 
 	public int getCodeCliente() {
 		return codeCliente;
