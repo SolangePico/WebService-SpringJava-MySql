@@ -21,9 +21,6 @@ public class Cliente {
 
 	@Column(name = "CLI_LAST_NAME")
 	private String apellidoCliente;
-	
-	@OneToMany(mappedBy = "cliente")
-	private List<Orden> orden;
 
 	public int getCodeCliente() {
 		return codeCliente;

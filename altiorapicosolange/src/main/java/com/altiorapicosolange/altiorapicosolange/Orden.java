@@ -22,13 +22,7 @@ public class Orden {
 
 	@Column(name = "OR_DATE")
 	private Date fechaOrden;
-	
-    @ManyToOne
-	private Cliente cliente;
-	
-	@OneToMany(mappedBy = "orden")
-	private List<OrdenDetalle> ordenDetalle;
-	
+		
 	public int getCodeOrden() {
 		return codeOrden;
 	}

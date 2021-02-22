@@ -21,10 +21,6 @@ public class Articulo {
 
 	@Column(name = "AR_UNIT_PRICE")
 	private Double precioUnitarioArticulo;
-	
-	@ManyToMany(mappedBy = "articulo")
-	private List<OrdenDetalle> ordenDetalle;
-	
 
 	public int getCodeArticulo() {
 		return codeArticulo;

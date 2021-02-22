@@ -27,12 +27,6 @@ public class OrdenDetalle {
 	@Column(name = "ORD_ART_CODE")
 	private int ord_art_code;
 	
-	@ManyToOne
-	private Orden orden;
-	
-	@ManyToMany
-	private List<Articulo> articulo;
-
 	public int getOrd_id() {
 		return ord_id;
 	}
