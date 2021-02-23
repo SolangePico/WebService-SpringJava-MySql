@@ -41,7 +41,20 @@ public class OrdenServiceImp implements OrdenService {
 	}
 
 	@Override
-	public Orden crearOrden(Orden ord) {
+	public Orden crearOrden(Orden ord) {		
 		return repositorioO.save(ord);
+	}
+	
+	@Override
+	public void actualizarStock(int codeArt, double stockNuevo){
+		EntityManager em = emf.createEntityManager();
+		em.getTransaction().begin();
+		Query queryArt = em.createQuery(
+				"UPDATE article a set a.stockArticulo = :stockNuevo where a.codeArticulo = :codeArt");
+		queryArt.setParameter("codeArt", codeArt);
+		queryArt.setParameter("stockNuevo", stockNuevo);
+		queryArt.executeUpdate();
+		em.getTransaction().commit();
+		em.close();
 	}
 }

@@ -27,6 +27,9 @@ public class OrdenDetalle {
 	@Column(name = "ORD_ART_CODE")
 	private int ord_art_code;
 	
+	@Column(name = "ORD_ART_STOCK")
+	private double ord_art_stock;
+	
 	public int getOrd_id() {
 		return ord_id;
 	}
@@ -49,5 +52,13 @@ public class OrdenDetalle {
 
 	public void setOrd_art_code(int ord_art_code) {
 		this.ord_art_code = ord_art_code;
+	}
+
+	public double getOrd_art_stock() {
+		return ord_art_stock;
+	}
+
+	public void setOrd_art_stock(double ord_art_stock) {
+		this.ord_art_stock = ord_art_stock;
 	}
 }

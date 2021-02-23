@@ -3,6 +3,9 @@ package com.altiorapicosolange.altiorapicosolange;
 import java.sql.Date;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -39,7 +42,9 @@ public class ControladorO {
 			OrdenDetalle ordenDetalle = new OrdenDetalle();
 			ordenDetalle.setOrd_code(ordenC.getNumeroOrden());
 			ordenDetalle.setOrd_art_code(ordD.getDetalles().get(i).getCodeArticulo());
+			ordenDetalle.setOrd_art_stock(ordD.getDetalles().get(i).getStockAVender());			
 			serviceOD.crearOrdenDetalle(ordenDetalle);
+			serviceO.actualizarStock(ordD.getDetalles().get(i).getCodeArticulo(), (ordD.getDetalles().get(i).getStockArticulo() - ordD.getDetalles().get(i).getStockAVender()));
 		}
 		ordD.getDetalles();
 	}

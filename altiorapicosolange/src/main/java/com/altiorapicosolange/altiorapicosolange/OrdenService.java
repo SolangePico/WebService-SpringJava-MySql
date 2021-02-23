@@ -6,4 +6,6 @@ public interface OrdenService {
 	List<OrdenByCliente> listarOrdenesCliente(int code);
 
 	Orden crearOrden(Orden ord);
+	
+	void actualizarStock(int codeArt, double stockNuevo);
 }

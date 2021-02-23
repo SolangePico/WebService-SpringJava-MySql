@@ -6,6 +6,7 @@ public class OrdenComplete {
 	private String numeroOrden;
 	private int codeClienteOrden;
 	private List<Articulo> detalles;
+	
 	public String getNumeroOrden() {
 		return numeroOrden;
 	}
